@@ -1,0 +1,181 @@
+body {
+    margin: 0px;
+    background: linear-gradient(180deg, rgba(175,103,233,1) 16%, rgba(101,101,231,1) 100%);
+    overflow: hidden;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#faq {
+    background-color: white;
+    background-image: url(images/illustration-woman-online-desktop.svg), url(images/bg-pattern-desktop.svg);
+    background-position: -18% 34%, -200% 65%;
+    background-size: 50%, 80%;
+    background-repeat: no-repeat;
+    height: 350px;
+    min-width: 243px;
+    width: 900px;
+    padding: 50px;
+    border-radius: 20px;
+    margin: 65px;
+    position:relative;
+}
+
+.half-width {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+img.responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+.bottom-image {
+    position: absolute;
+    z-index: 1;
+    width: 30%;
+    left: 10%;
+    top: 25%;
+}
+
+.top-image {
+    position: absolute;
+    z-index: 2;
+    left: -95px;
+    top: 165px;
+}
+
+.accordion-wrapper {
+    overflow-y: auto;
+    height: 82%;
+}
+
+.accordion h1 {
+    font-weight: bolder;
+    font-size: 35px;
+    margin: 1px 0 20px 0;
+}
+
+.caret {
+    float: right;
+    padding: 0 4px;
+}
+
+.accordion__label {
+    padding: 20px 0px;
+    border-bottom: 1px solid #e7e7e9
+}
+
+.accordion__label{
+    display: block;
+    font-weight: normal;
+    cursor: pointer;
+    position: relative;
+    transition: font-weight 0.3s ease-in-out, transform 2s ease-in-out;
+}
+
+.accordion__label:hover{
+    color: #f47c57;
+}
+
+.accordion__content{
+    line-height: 1.6;
+    font-size: 0.85em;
+    display: none;
+}
+
+.accordion__input{
+    display: none;
+}
+
+.accordion__input:checked ~ .accordion__content {
+    display: block;
+}
+
+.accordion__input:checked ~ .accordion__label {
+    font-weight: 700;
+}
+
+.accordion__input:checked ~ .accordion__label img {
+    transform: scaleY(-1);
+}
+
+
+/* Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+
+@media only screen and (min-width: 768px) {
+    .mobile-top-image {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    #faq {
+        background-image: url(images/bg-pattern-mobile.svg);
+        background-position: top;
+        background-size: auto;
+        height: 560px;
+        width: 300px;
+        padding: 25px;
+        margin: 0;
+    }
+
+    .top-image, .illustration {
+        display: none;
+    }
+
+    .mobile-top-image {
+        position: relative;
+        z-index: 3;
+        top: -24%;
+        left: 2%;
+    }
+
+
+    .accordion {
+        position: relative;
+        overflow-y: auto;
+        width: 100%;
+        height: 475px;
+        top: -25%;
+    }
+
+    .accordion__label {
+        display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+  }
